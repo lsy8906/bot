@@ -935,7 +935,7 @@ class taskCog(commands.Cog):
 # 								description= "```" + fixed_bossData[i][0] + fixed_bossData[i][4] + "```" ,
 # 								color=0x00ff00
 # 								)
-# 						await self.bot.get_channel(channel).send(embed=embed, tts=False)
+						await self.bot.get_channel(channel).send("```" + fixed_bossData[i][0] + fixed_bossData[i][4] + "```", tts=False)
 						try:
 							if basicSetting[21] == "1":
 								await PlaySound(self.bot.voice_clients[0], './sound/' + fixed_bossData[i][0] + '젠.mp3')
@@ -1035,11 +1035,11 @@ class taskCog(commands.Cog):
 										tmp_bossTimeString[i] = bossTimeString[i] = nextTime.strftime('%H:%M:%S')
 										tmp_bossDateString[i] = bossDateString[i] = nextTime.strftime('%Y-%m-%d')
 										await self.bot.get_channel(channel).send("```" +  bossData[i][0] + ' 미입력 됐습니다.```', tts=False)
-										embed = discord.Embed(
-											description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
-											color=0xff0000
-											)
-										await self.bot.get_channel(channel).send(embed=embed, tts=False)
+# 										embed = discord.Embed(
+# 											description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
+# 											color=0xff0000
+# 											)
+										await self.bot.get_channel(channel).send('```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```', tts=False)
 										try:
 											if basicSetting[21] == "1":
 												await PlaySound(self.bot.voice_clients[0], './sound/' + bossData[i][0] + '미입력.mp3')
@@ -1055,11 +1055,11 @@ class taskCog(commands.Cog):
 										tmp_bossTimeString[i] = bossTimeString[i] = nextTime.strftime('%H:%M:%S')
 										tmp_bossDateString[i] = bossDateString[i] = nextTime.strftime('%Y-%m-%d')
 										await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' 멍 입니다.```')
-										embed = discord.Embed(
-											description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
-											color=0xff0000
-											)
-										await self.bot.get_channel(channel).send(embed=embed, tts=False)
+# 										embed = discord.Embed(
+# 											description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
+# 											color=0xff0000
+# 											)
+										await self.bot.get_channel(channel).send('```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```', tts=False)
 										try:
 											if basicSetting[21] == "1":
 												await PlaySound(self.bot.voice_clients[0], './sound/' + bossData[i][0] + '멍.mp3')
@@ -3328,7 +3328,7 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 # 								description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
 # 								color=0xff0000
 # 								)
-# 						await self.get_channel(channel).send(embed=embed, tts=False)
+						await self.get_channel(channel).send('```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```', tts=False)
 
 					################ 보스 멍 처리 ################ 
 
@@ -3373,11 +3373,11 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 
 							tmp_bossTimeString[i] = bossTimeString[i] = temptime.strftime('%H:%M:%S')
 							tmp_bossDateString[i] = bossDateString[i] = temptime.strftime('%Y-%m-%d')
-							embed = discord.Embed(
-									description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
-									color=0xff0000
-									)
-							await self.get_channel(channel).send(embed=embed, tts=False)
+# 							embed = discord.Embed(
+# 									description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
+# 									color=0xff0000
+# 									)
+							await self.get_channel(channel).send('```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```', tts=False)
 						else:
 							if tmp_bossTime[i] < tmp_now :
 
@@ -3392,11 +3392,11 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 
 								tmp_bossTimeString[i] = bossTimeString[i] = nextTime.strftime('%H:%M:%S')
 								tmp_bossDateString[i] = bossDateString[i] = nextTime.strftime('%Y-%m-%d')
-								embed = discord.Embed(
-										description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
-										color=0xff0000
-										)
-								await self.get_channel(channel).send(embed=embed, tts=False)
+# 								embed = discord.Embed(
+# 										description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
+# 										color=0xff0000
+# 										)
+								await self.get_channel(channel).send('```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```', tts=False)
 							else:
 								await self.get_channel(channel).send('```' + bossData[i][0] + '탐이 아직 안됐습니다. 다음 ' + bossData[i][0] + '탐 [' + tmp_bossTimeString[i] + '] 입니다```', tts=False)
 
@@ -3442,7 +3442,7 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 # 									description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
 # 									color=0xff0000
 # 									)
-# 							await self.get_channel(channel).send(embed=embed, tts=False)
+							await self.get_channel(channel).send('```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```', tts=False)
 						else:
 							await self.get_channel(channel).send('```' + bossData[i][0] +' 예상 시간을 입력해주세요.```', tts=False)
 							
