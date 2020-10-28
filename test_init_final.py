@@ -3328,7 +3328,7 @@ class IlsangDistributionBot(commands.AutoShardedBot):
 # 								description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
 # 								color=0xff0000
 # 								)
-						await self.get_channel(channel).send('```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```', tts=False)
+						await self.get_channel(channel).send('```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다. 유리아주머니 까탈스럽네```', tts=False)
 
 					################ 보스 멍 처리 ################ 
 
