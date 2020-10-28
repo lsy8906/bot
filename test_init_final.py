@@ -994,7 +994,7 @@ class taskCog(commands.Cog):
 									description= "```" + bossData[i][0] + bossData[i][4] + "```" ,
 									color=0x00ff00
 									)
-						await self.bot.get_channel(channel).send(embed=embed, tts=False)
+						await self.bot.get_channel(channel).send("```" + bossData[i][0] + bossData[i][4] + "```", tts=False)
 						try:
 							if basicSetting[21] == "1":
 								await PlaySound(self.bot.voice_clients[0], './sound/' + bossData[i][0] + '젠.mp3')
