@@ -945,61 +945,61 @@ class taskCog(commands.Cog):
 				################ 일반 보스 확인 ################ 
 				for i in range(bossNum):
 					################ before_alert1 ################ 
-					if bossTime[i] <= priv0 and bossTime[i] > priv:
-						if basicSetting[3] != '0':
-							if bossFlag0[i] == False:
-								bossFlag0[i] = True
-								if bossData[i][6] != '' :
-									await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```', tts=False)
-								else :
-									await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```", tts=False)
-								try:
-									if basicSetting[21] == "1":
-										await PlaySound(self.bot.voice_clients[0], './sound/' + bossData[i][0] + '알림1.mp3')
-								except:
-									pass
+# 					if bossTime[i] <= priv0 and bossTime[i] > priv:
+# 						if basicSetting[3] != '0':
+# 							if bossFlag0[i] == False:
+# 								bossFlag0[i] = True
+# 								if bossData[i][6] != '' :
+# 									await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```', tts=False)
+# 								else :
+# 									await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```", tts=False)
+# 								try:
+# 									if basicSetting[21] == "1":
+# 										await PlaySound(self.bot.voice_clients[0], './sound/' + bossData[i][0] + '알림1.mp3')
+# 								except:
+# 									pass
 
-					################ before_alert ################
-					if bossTime[i] <= priv and bossTime[i] > now:
-						if basicSetting[1] != '0' :
-							if bossFlag[i] == False:
-								bossFlag[i] = True
-								if bossData[i][6] != '' :
-									await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[1] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```', tts=False)
-								else :
-									await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[1] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```", tts=False)
-								try:
-									if basicSetting[21] == "1":
-										await PlaySound(self.bot.voice_clients[0], './sound/' + bossData[i][0] + '알림.mp3')
-								except:
-									pass
+# 					################ before_alert ################
+# 					if bossTime[i] <= priv and bossTime[i] > now:
+# 						if basicSetting[1] != '0' :
+# 							if bossFlag[i] == False:
+# 								bossFlag[i] = True
+# 								if bossData[i][6] != '' :
+# 									await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[1] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```', tts=False)
+# 								else :
+# 									await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[1] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```", tts=False)
+# 								try:
+# 									if basicSetting[21] == "1":
+# 										await PlaySound(self.bot.voice_clients[0], './sound/' + bossData[i][0] + '알림.mp3')
+# 								except:
+# 									pass
 
 					################ 보스 젠 시간 확인 ################ 
-					# if bossTime[i] <= now :
-					# 	#print ('if ', bossTime[i])
-					# 	bossMungFlag[i] = True
-					# 	tmp_bossTime[i] = bossTime[i]
-					# 	tmp_bossTimeString[i] = tmp_bossTime[i].strftime('%H:%M:%S')
-					# 	tmp_bossDateString[i] = tmp_bossTime[i].strftime('%Y-%m-%d')
-					# 	bossTimeString[i] = '99:99:99'
-					# 	bossDateString[i] = '9999-99-99'
-					# 	bossTime[i] = now+datetime.timedelta(days=365)
-					# 	if bossData[i][6] != '' :
-					# 		embed = discord.Embed(
-					# 				description= "```" + bossData[i][0] + bossData[i][4] + '\n<' + bossData[i][6] + '>```' ,
-					# 				color=0x00ff00
-					# 				)
-					# 	else :
-					# 		embed = discord.Embed(
-					# 				description= "```" + bossData[i][0] + bossData[i][4] + "```" ,
-					# 				color=0x00ff00
-					# 				)
-					# 	await self.bot.get_channel(channel).send(embed=embed, tts=False)
-					# 	try:
-					# 		if basicSetting[21] == "1":
-					# 			await PlaySound(self.bot.voice_clients[0], './sound/' + bossData[i][0] + '젠.mp3')
-					# 	except:
-					# 		pass
+					if bossTime[i] <= now :
+						#print ('if ', bossTime[i])
+						bossMungFlag[i] = True
+						tmp_bossTime[i] = bossTime[i]
+						tmp_bossTimeString[i] = tmp_bossTime[i].strftime('%H:%M:%S')
+						tmp_bossDateString[i] = tmp_bossTime[i].strftime('%Y-%m-%d')
+						bossTimeString[i] = '99:99:99'
+						bossDateString[i] = '9999-99-99'
+						bossTime[i] = now+datetime.timedelta(days=365)
+						if bossData[i][6] != '' :
+							embed = discord.Embed(
+									description= "```" + bossData[i][0] + bossData[i][4] + '\n<' + bossData[i][6] + '>```' ,
+									color=0x00ff00
+									)
+						else :
+							embed = discord.Embed(
+									description= "```" + bossData[i][0] + bossData[i][4] + "```" ,
+									color=0x00ff00
+									)
+						await self.bot.get_channel(channel).send(embed=embed, tts=False)
+						try:
+							if basicSetting[21] == "1":
+								await PlaySound(self.bot.voice_clients[0], './sound/' + bossData[i][0] + '젠.mp3')
+						except:
+							pass
 
 					################ 보스 자동 멍 처리 ################ 
 					if bossMungFlag[i] == True:
