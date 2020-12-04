@@ -903,16 +903,16 @@ class taskCog(commands.Cog):
 				################ 고정 보스 확인 ################ 
 				for i in range(fixed_bossNum):
 					################ before_alert1 ################ 
-					if fixed_bossTime[i] <= priv0 and fixed_bossTime[i] > priv:
-						if basicSetting[3] != '0':
-							if fixed_bossFlag0[i] == False:
-								fixed_bossFlag0[i] = True
-								await self.bot.get_channel(channel).send("```" + fixed_bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + fixed_bossData[i][3] +' [' +  fixed_bossTime[i].strftime('%H:%M:%S') + ']```', tts=False)
-								try:
-									if basicSetting[21] == "1":
-										await PlaySound(self.bot.voice_clients[0], './sound/' + fixed_bossData[i][0] + '알림1.mp3')
-								except:
-									pass
+# 					if fixed_bossTime[i] <= priv0 and fixed_bossTime[i] > priv:
+# 						if basicSetting[3] != '0':
+# 							if fixed_bossFlag0[i] == False:
+# 								fixed_bossFlag0[i] = True
+# 								await self.bot.get_channel(channel).send("```" + fixed_bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + fixed_bossData[i][3] +' [' +  fixed_bossTime[i].strftime('%H:%M:%S') + ']```', tts=False)
+# 								try:
+# 									if basicSetting[21] == "1":
+# 										await PlaySound(self.bot.voice_clients[0], './sound/' + fixed_bossData[i][0] + '알림1.mp3')
+# 								except:
+# 									pass
 
 					################ before_alert ################ 
 					if fixed_bossTime[i] <= priv and fixed_bossTime[i] > now:
@@ -945,19 +945,19 @@ class taskCog(commands.Cog):
 				################ 일반 보스 확인 ################ 
 				for i in range(bossNum):
 					################ before_alert1 ################ 
-					if bossTime[i] <= priv0 and bossTime[i] > priv:
-						if basicSetting[3] != '0':
-							if bossFlag0[i] == False:
-								bossFlag0[i] = True
-								if bossData[i][6] != '' :
-									await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```', tts=False)
-								else :
-									await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```", tts=False)
-								try:
-									if basicSetting[21] == "1":
-										await PlaySound(self.bot.voice_clients[0], './sound/' + bossData[i][0] + '알림1.mp3')
-								except:
-									pass
+# 					if bossTime[i] <= priv0 and bossTime[i] > priv:
+# 						if basicSetting[3] != '0':
+# 							if bossFlag0[i] == False:
+# 								bossFlag0[i] = True
+# 								if bossData[i][6] != '' :
+# 									await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]" + '\n<' + bossData[i][6] + '>```', tts=False)
+# 								else :
+# 									await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' ' + basicSetting[3] + '분 전 ' + bossData[i][3] + " [" +  bossTimeString[i] + "]```", tts=False)
+# 								try:
+# 									if basicSetting[21] == "1":
+# 										await PlaySound(self.bot.voice_clients[0], './sound/' + bossData[i][0] + '알림1.mp3')
+# 								except:
+# 									pass
 
 					################ before_alert ################
 					if bossTime[i] <= priv and bossTime[i] > now:
